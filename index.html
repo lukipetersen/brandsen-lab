@@ -11,9 +11,12 @@
   <meta property="og:title" content="Brandsen Lab — Laboratorio de Análisis Clínicos">
   <meta property="og:description" content="Resultados confiables, atención profesional y tecnología aplicada al diagnóstico clínico. Saenz Peña 682, Brandsen.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brandsen-lab.vercel.app/">
+  <meta property="og:image" content="https://brandsen-lab.vercel.app/logo.jpg">
   <meta property="og:locale" content="es_AR">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preload" as="image" href="laborat.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -292,17 +295,6 @@
       position: absolute; inset: 0;
       background: radial-gradient(ellipse at 20% 80%, rgba(196,160,176,.18) 0%, transparent 55%),
                   radial-gradient(ellipse at 85% 15%, rgba(255,255,255,.04) 0%, transparent 50%);
-    }
-    .hero-side {
-      position: absolute;
-      right: 0; top: 0; bottom: 0;
-      width: 42%;
-      background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=960&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: .28;
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%);
-      mask-image: linear-gradient(to right, transparent 0%, black 50%);
     }
     .hero-content {
       position: relative;
@@ -1000,7 +992,6 @@
       .f-row { grid-template-columns: 1fr; }
       .ft-grid { grid-template-columns: 1fr; gap: 28px; }
       .ft-bottom { flex-direction: column; text-align: center; }
-      .hero-side { display: none; }
       .hero-stats { gap: 24px; }
       .wa-wrap { bottom: 18px; right: 18px; }
       #scrollTop { bottom: 18px; left: 18px; }
@@ -1018,7 +1009,7 @@
 <header id="header" class="scrolled">
   <div class="container">
     <a href="#hero" class="logo" aria-label="Brandsen Lab – Inicio">
-      <img src="logo.jpg" alt="Brandsen Lab" class="logo-img">
+      <img src="logo.jpg" alt="Brandsen Lab" class="logo-img" width="52" height="52" decoding="async">
     </a>
     <nav class="desk" aria-label="Navegación principal">
       <a href="#about">Nosotros</a>
@@ -1158,7 +1149,9 @@
           src="labo.webp"
           alt="Laboratorio Brandsen Lab — equipamiento moderno"
           class="about-img"
+          width="1360" height="764"
           loading="lazy"
+          decoding="async"
         >
         <div class="about-badge" aria-hidden="true">
           <div class="n">+50</div>
@@ -1536,7 +1529,7 @@
     <div class="ft-grid">
       <div>
         <div class="ft-logo">
-          <img src="logo.jpg" alt="Brandsen Lab" class="ft-logo-img">
+          <img src="logo.jpg" alt="Brandsen Lab" class="ft-logo-img" width="64" height="64" decoding="async">
         </div>
         <p class="ft-desc">Laboratorio de análisis clínicos comprometido con la precisión, la calidad y el bienestar de cada paciente.</p>
         <div class="ft-social">
@@ -1578,7 +1571,7 @@
       </div>
     </div>
     <div class="ft-bottom">
-      <span>© 2024 Brandsen Lab &nbsp;·&nbsp; Todos los derechos reservados</span>
+      <span>© <span id="copy-year"></span> Brandsen Lab &nbsp;·&nbsp; Todos los derechos reservados</span>
       <span>Laboratorio de Análisis Clínicos &nbsp;·&nbsp; Brandsen, Buenos Aires</span>
     </div>
   </div>
@@ -1599,6 +1592,8 @@
 
 <!-- ═══════════════════════════════ JAVASCRIPT ═══════════════════════════════ -->
 <script>
+  document.getElementById('copy-year').textContent = new Date().getFullYear();
+
   /* ── Header scroll ── */
   const header = document.getElementById('header');
   const scrollTopBtn = document.getElementById('scrollTop');
