@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brandsen-lab.vercel.app/sitemap.xml
+Sitemap: https://www.brandsenlab.com/sitemap.xml

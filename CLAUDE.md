@@ -48,6 +48,7 @@ brandsen-lab/
 ## Deploy
 - **Repositorio GitHub:** https://github.com/lukipetersen/brandsen-lab
 - **Hosting:** Vercel (auto-deploy al hacer push a `main`)
+- **Dominio:** https://www.brandsenlab.com
 - **Flujo de cambios:** editar `index.html` → `git add` → `git commit` → `git push` → Vercel redespliega solo
 
 ## Reglas importantes
