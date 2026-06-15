@@ -37,8 +37,8 @@ brandsen-lab/
 11. **Footer** — logo, links, datos de contacto
 
 ## Datos del laboratorio
-- **Dirección:** Saenz Peña 682, Brandsen, Buenos Aires
-- **Horarios:** Lunes a Viernes, 8:00–12:00 y 16:00–18:00 hs
+- **Dirección:** Saenz Peña 696, Brandsen, Buenos Aires
+- **Horarios:** Lunes a Viernes, 8:00–10:00 hs extracciones · 10:00–12:00 hs consultas y resultados
 - **Teléfono:** (2223) 44-2486
 - **WhatsApp:** (2223) 67-2253
 - **Email:** brandsenlab@gmail.com
