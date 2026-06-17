@@ -6,88 +6,86 @@
 ---
 
 ## Última actualización
-**Fecha:** 5 Junio 2026  
-**Estado del proyecto:** Online en Vercel ✅ — Security hardening aplicado
+**Fecha:** 17 Junio 2026  
+**Estado del proyecto:** Online en www.brandsenlab.com ✅ — SEO local implementado
 
 ---
 
 ## Historial de sesiones
 
 ### Sesión 1 — Creación inicial
-- Se creó el sitio institucional completo desde cero en un único `index.html`
+- Sitio institucional completo desde cero en un único `index.html`
 - Paleta basada en el logo: vino `#6B1E3C` + malva `#C4A0B0`
 - 11 secciones completas con animaciones, FAQ acordeón, formulario validado, WhatsApp flotante
 - SEO básico con meta tags y Open Graph
 
 ### Sesión 2 — Ajustes y personalización
-- **Estadísticas del hero:** se eliminó "+50 Tipos de estudios", quedaron solo "+50 Años de experiencia" y "100% Compromiso profesional"
-- **Logo real:** se reemplazó el logo de texto/CSS por la imagen real `logo.jpg` en header y footer
-- **Años de experiencia:** cambiado de +20 a +50 en todos los lugares del sitio
-- **Título del hero:** cambiado de "Comprometidos con la precisión y la salud" a "Brandsen Lab"
-- **Fotos reales:** 
-  - `laborat.webp` (fachada del edificio) → fondo del hero
-  - `labo.webp` (cartel con logo en la pared) → foto en sección Nosotros
-  - Se eliminó la foto lateral del hero (era de Unsplash)
-- **Header:** siempre visible con fondo blanco (ya no es transparente al inicio)
-- **Orden de secciones:** Ubicación movida al segundo lugar (después del hero), antes de Nosotros
-- **Google Maps:** vinculado con el Place ID real del laboratorio (`0x95a2c9d46f21106f:0xe2bbd36fb5c011ee`), botón "Cómo llegar" apunta a la ficha real del negocio
-- **Favicon:** creado `favicon.png` desde `logo.jpg`, aparece en la pestaña del navegador
-
-### Sesión 4 — Security Hardening & Performance (2026-06-05)
-
-**Infraestructura:**
-- `vercel.json` creado con 7 headers HTTP de seguridad:
-  - `Content-Security-Policy` — whitelist estricta de fuentes permitidas (CSP)
-  - `X-Frame-Options: DENY` — protección anti-clickjacking
-  - `X-Content-Type-Options: nosniff` — protección anti-MIME sniffing
-  - `Referrer-Policy: strict-origin-when-cross-origin`
-  - `Strict-Transport-Security` — HSTS max-age 1 año + includeSubDomains + preload
-  - `Permissions-Policy` — bloquea cámara, micrófono, geolocalización, pagos
-  - `X-DNS-Prefetch-Control: off`
-- `.gitignore` creado — previene subir .DS_Store y archivos sensibles
-- `robots.txt` creado — controla crawlers y apunta al sitemap
-- `sitemap.xml` creado — mejora SEO e indexación
-
-**Código frontend (index.html):**
-- CSS muerto eliminado — regla `.hero-side` con URL de Unsplash (dependencia externa innecesaria, código de sesión anterior)
-- `<link rel="preload">` para `laborat.webp` — LCP image priorizada → mejor Core Web Vitals
-- Dimensiones explícitas agregadas a todas las imágenes → elimina Layout Shift (CLS):
-  - `logo.jpg` en header: `width="52" height="52"`
-  - `logo.jpg` en footer: `width="64" height="64"`
-  - `labo.webp` en Nosotros: `width="1360" height="764"`
-- `decoding="async"` en imágenes no críticas
-- Copyright año dinámico — ya no está hardcodeado a 2024
-- Meta tags OG completados: `og:url` y `og:image` faltaban
-
-**Vulnerabilidades identificadas que NO aplican a este sitio:**
-- Sin backend → sin SQL injection, sin autenticación, sin gestión de sesiones
-- Sin credenciales en código
-- HTTPS gestionado por Vercel
-
-**NOTA CRÍTICA — Formulario de contacto:**
-El formulario valida client-side pero NO envía ningún email. Los pacientes creen que enviaron una consulta pero no llega nada. Para resolverlo: integrar Formspree (https://formspree.io) — gratuito, sin backend.
+- Estadísticas del hero: "+50 Años de experiencia" y "100% Compromiso profesional"
+- Logo real `logo.jpg` en header y footer
+- Fotos reales: `laborat.webp` (hero), `labo.webp` (Nosotros)
+- Header fijo con fondo blanco
+- Ubicación movida al segundo lugar (después del hero)
+- Google Maps vinculado con Place ID real
 
 ### Sesión 3 — Deploy
-- Repositorio creado en GitHub: https://github.com/lukipetersen/brandsen-lab
-- Conectado a Vercel para auto-deploy al hacer push a `main`
-- Favicon subido y pusheado
+- Repositorio GitHub: https://github.com/lukipetersen/brandsen-lab
+- Conectado a Vercel para auto-deploy al push a `main`
 - Creados `CLAUDE.md` y `PROJECT_CONTEXT.md`
+
+### Sesión 4 — Security Hardening & Performance (2026-06-05)
+- `vercel.json`: 7 headers HTTP de seguridad (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-DNS-Prefetch-Control)
+- `.gitignore`, `robots.txt`, `sitemap.xml` creados
+- CSS muerto eliminado (referencia Unsplash), preload LCP, dimensiones en imágenes, copyright dinámico
+
+### Sesión 5 — Contenido real + Dominio + SEO (2026-06-17)
+
+**Contenido actualizado en index.html:**
+- Dirección: Saenz Peña 696 (era 682)
+- Horario: 8–10 hs extracciones · 10–12 hs consultas y resultados
+- Nosotros: "Fundado en enero de 1971 por Norma Cremaschi" + eliminados recuadros Misión/Visión
+- Servicios reordenados (10 tarjetas):
+  1. Hematología y Hemostasia (hemograma, metabolismo del hierro)
+  2. Bioquímica
+  3. Perfil Lipídico
+  4. Control Metabólico
+  5. Estudios Hormonales
+  6. Inmunología (factor reumatoideo)
+  7. Perinatología (estreptococo B, screening neonatal)
+  8. Bacteriología y Micología (urocultivos, hisopados, hongos)
+  9. Análisis de Agua (bacteriológico y fisicoquímico)
+  10. Estudios Especiales
+- Cartel "ante cualquier duda consultarnos" agregado en Servicios
+- Indicaciones actualizadas: ayuno 8–10 hs, medicación post-extracción, orina 24hs completa, materia fecal 3–5 muestras, hormonales con cortisol y TSH, progesterona día 21–23
+- Sección Equipo: eliminada
+- FAQ: ayuno actualizado a 8–10 hs, retiro de resultados sin "comprobante"
+
+**Dominio y Google:**
+- Dominio `www.brandsenlab.com` conectado via GoDaddy → Vercel
+- Google Search Console verificado ✅
+- Sitemap enviado a Google ✅ — indexación en progreso
+
+**SEO implementado:**
+- Meta title: `Laboratorio de Análisis Clínicos en Brandsen | Brandsen Lab`
+- Meta description: con keywords locales, horario y dirección
+- Meta keywords: 10 términos geo-específicos de Brandsen
+- JSON-LD Schema.org tipo `MedicalLab`: dirección, horarios, fundadora, fecha, servicios
+- Sección SEO local ~400 palabras visible (H2 + 4×H3) antes del footer
+- og:title y og:description actualizados
 
 ---
 
 ## Pendiente / Por hacer
-- [ ] **Formulario** — integrar Formspree para que las consultas lleguen realmente al email
-- [ ] **SRI** — agregar hash `integrity` a Font Awesome en cdnjs (obtener hash en https://cdnjs.com/libraries/font-awesome/6.5.0)
-- [ ] **Dominio propio** — conectar dominio a Vercel (actualizar `og:url`, `sitemap.xml` y `robots.txt` con el dominio real)
-- [ ] **Fotos del equipo** — reemplazar íconos de placeholder con fotos reales del personal
+
+- [ ] **Formulario** — integrar Formspree para que las consultas lleguen al email. Pasos: registrarse en formspree.io → crear form → darme el ID → yo hago el cambio en el código
 - [ ] **RRSS** — agregar links reales de Instagram y Facebook (hoy van a `#`)
-- [ ] **Privacidad Google Maps** — evaluar agregar banner de consentimiento antes de cargar el iframe (cumplimiento GDPR/LPDP)
-- [ ] **Font Awesome** — considerar cargar solo los íconos usados (reduce ~180KB de CSS) o migrar a SVG inline
+- [ ] **SRI** — agregar hash `integrity` a Font Awesome en cdnjs (obtener en https://cdnjs.com/libraries/font-awesome/6.5.0)
+- [ ] **Privacidad Google Maps** — evaluar banner de consentimiento (Ley 25.326 Argentina)
+- [ ] **Font Awesome** — cargar solo los íconos usados (~180KB de ahorro)
 
 ---
 
 ## Cómo retomar trabajo
-1. Leer `CLAUDE.md` para entender la estructura del proyecto
+1. Leer `CLAUDE.md` para entender estructura y datos actuales
 2. Leer este archivo para saber qué se hizo y qué falta
-3. Abrir `/Users/lucaspetersen/Desktop/brandsen-lab/index.html`
-4. Al terminar cambios: `git add -A && git commit -m "descripción" && git push`
+3. El archivo principal es `/Users/lucaspetersen/Desktop/brandsen-lab/index.html`
+4. Al terminar: `git add -A && git commit -m "descripción" && git push`
