@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laboratorio de Análisis Clínicos en Brandsen | Brandsen Lab</title>
-  <meta name="description" content="Análisis clínicos en Brandsen, Buenos Aires. Extracciones sin turno, lun–vie 8 a 12 hs. Hemograma, hormonas, bacteriología y más. Saenz Peña 696 · Brandsen Lab.">
+  <title>Brandsen Lab — Laboratorio de Análisis Clínicos en Brandsen</title>
+  <meta name="description" content="Laboratorio clínico en Brandsen, Buenos Aires. Extracciones sin turno · Lun–Vie 8–12 hs. Hemograma, bacteriología, hormonas y más. Saenz Peña 696 · BrandsenLab.">
   <meta name="keywords" content="laboratorio análisis clínicos Brandsen, análisis clínicos Brandsen Buenos Aires, laboratorio bioquímico Brandsen, extracciones de sangre Brandsen, estudios de laboratorio Brandsen, hemograma Brandsen, laboratorio cerca de Brandsen, bacteriología Brandsen, estudios hormonales Brandsen, laboratorio análisis clínicos Buenos Aires">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Brandsen Lab">
-  <meta property="og:title" content="Laboratorio de Análisis Clínicos en Brandsen | Brandsen Lab">
-  <meta property="og:description" content="Análisis clínicos en Brandsen, Buenos Aires. Extracciones sin turno, lun–vie 8 a 12 hs. Hemograma, hormonas, bacteriología y más. Saenz Peña 696.">
+  <meta property="og:title" content="Brandsen Lab — Laboratorio de Análisis Clínicos en Brandsen">
+  <meta property="og:description" content="Laboratorio clínico en Brandsen, Buenos Aires. Extracciones sin turno · Lun–Vie 8–12 hs. Hemograma, bacteriología, hormonas y más. Saenz Peña 696.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.brandsenlab.com">
   <meta property="og:image" content="https://www.brandsenlab.com/logo.jpg">
   <meta property="og:locale" content="es_AR">
+  <link rel="canonical" href="https://www.brandsenlab.com/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -28,6 +29,8 @@
     "@context": "https://schema.org",
     "@type": "MedicalLab",
     "name": "Brandsen Lab",
+    "alternateName": ["BrandsenLab", "Laboratorio Brandsen", "Laboratorio en Brandsen"],
+    "areaServed": {"@type": "City", "name": "Brandsen", "addressRegion": "Buenos Aires", "addressCountry": "AR"},
     "description": "Laboratorio de análisis clínicos y bacteriológicos en Brandsen, Buenos Aires. Hemograma, bioquímica, bacteriología, hormonas, perinatología y más.",
     "url": "https://www.brandsenlab.com",
     "telephone": "+542223442486",
@@ -1477,6 +1480,9 @@
       <div class="form-box fi d1">
         <h3 class="form-title">Envianos tu consulta</h3>
         <form id="contactForm" novalidate>
+          <input type="hidden" name="access_key" value="22d02cf3-1765-4307-afc2-15b65e65979a">
+          <input type="hidden" name="subject" value="Nueva consulta desde BrandsenLab.com">
+          <input type="hidden" name="from_name" value="Formulario — Brandsen Lab">
           <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="f-row">
             <div class="fg">
@@ -1697,10 +1703,9 @@
   const form = document.getElementById('contactForm');
   const formOk = document.getElementById('formOk');
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    // Honeypot
     if (form.querySelector('[name="website"]').value) return;
 
     let valid = true;
@@ -1718,9 +1723,28 @@
     validate('email', 'err-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()));
     validate('consulta', 'err-consulta', v => v.trim().length >= 10);
 
-    if (valid) {
-      form.style.display = 'none';
-      formOk.style.display = 'block';
+    if (!valid) return;
+
+    const btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Enviando…';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(form)
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        formOk.style.display = 'block';
+      } else {
+        throw new Error('error');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar consulta';
+      alert('Hubo un error al enviar. Contactanos por WhatsApp al (2223) 67-2253.');
     }
   });
 
