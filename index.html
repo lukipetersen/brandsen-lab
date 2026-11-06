@@ -4,16 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brandsen Lab — Laboratorio de Análisis Clínicos en Brandsen</title>
-  <meta name="description" content="Laboratorio clínico en Brandsen, Buenos Aires. Extracciones sin turno · Lun–Vie 8–12 hs. Hemograma, bacteriología, hormonas y más. Saenz Peña 696 · BrandsenLab.">
+  <meta name="description" content="Laboratorio de análisis clínicos en Brandsen. Extracciones sin turno de lunes a viernes, de 8 a 10 hs. Saenz Peña 696, Brandsen.">
   <meta name="keywords" content="laboratorio análisis clínicos Brandsen, análisis clínicos Brandsen Buenos Aires, laboratorio bioquímico Brandsen, extracciones de sangre Brandsen, estudios de laboratorio Brandsen, hemograma Brandsen, laboratorio cerca de Brandsen, bacteriología Brandsen, estudios hormonales Brandsen, laboratorio análisis clínicos Buenos Aires">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Brandsen Lab">
   <meta property="og:title" content="Brandsen Lab — Laboratorio de Análisis Clínicos en Brandsen">
-  <meta property="og:description" content="Laboratorio clínico en Brandsen, Buenos Aires. Extracciones sin turno · Lun–Vie 8–12 hs. Hemograma, bacteriología, hormonas y más. Saenz Peña 696.">
+  <meta property="og:description" content="Laboratorio de análisis clínicos en Brandsen. Extracciones sin turno de lunes a viernes, de 8 a 10 hs. Saenz Peña 696, Brandsen.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.brandsenlab.com">
-  <meta property="og:image" content="https://www.brandsenlab.com/logo.jpg">
+  <meta property="og:image" content="https://www.brandsenlab.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Brandsen Lab — Laboratorio de Análisis Clínicos en Brandsen">
   <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="Brandsen Lab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brandsen Lab — Laboratorio de Análisis Clínicos en Brandsen">
+  <meta name="twitter:description" content="Laboratorio de análisis clínicos en Brandsen. Extracciones sin turno de lunes a viernes, de 8 a 10 hs. Saenz Peña 696, Brandsen.">
+  <meta name="twitter:image" content="https://www.brandsenlab.com/og-image.jpg">
   <link rel="canonical" href="https://www.brandsenlab.com/">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
@@ -21,13 +29,27 @@
   <link rel="preload" as="image" href="laborat.webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.brandsenlab.com/#website",
+    "url": "https://www.brandsenlab.com/",
+    "name": "Brandsen Lab",
+    "inLanguage": "es-AR",
+    "publisher": { "@id": "https://www.brandsenlab.com/#lab" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "MedicalLab",
+    "@id": "https://www.brandsenlab.com/#lab",
     "name": "Brandsen Lab",
     "alternateName": ["BrandsenLab", "Laboratorio Brandsen", "Laboratorio en Brandsen"],
     "areaServed": {"@type": "City", "name": "Brandsen", "addressRegion": "Buenos Aires", "addressCountry": "AR"},
@@ -37,7 +59,7 @@
     "email": "brandsenlab@gmail.com",
     "image": "https://www.brandsenlab.com/logo.jpg",
     "foundingDate": "1971-01",
-    "founder": { "@type": "Person", "name": "Norma Cremaschi" },
+    "founder": { "@type": "Person", "@id": "https://www.brandsenlab.com/#norma-cremaschi", "name": "Norma Cremaschi" },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Saenz Peña 696",
@@ -176,7 +198,7 @@
       display: inline-block;
       background: var(--mauve-light);
       color: var(--wine);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
@@ -828,8 +850,8 @@
       font-size: 18px;
       flex-shrink: 0;
     }
-    .loc-ct h4 {
-      font-size: 11px;
+    .loc-ct h3 {
+      font-size: 12px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1.2px;
@@ -967,7 +989,7 @@
     .ft-desc { font-size: 14px; line-height: 1.7; margin-bottom: 22px; max-width: 270px; }
     .ft-social { display: flex; gap: 9px; }
     .ft-social a {
-      width: 36px; height: 36px;
+      width: 44px; height: 44px;
       background: rgba(255,255,255,.1);
       border-radius: 9px;
       display: flex; align-items: center; justify-content: center;
@@ -1013,6 +1035,14 @@
       flex-wrap: wrap;
       gap: 8px;
     }
+    .ft-legal { color: rgba(255,255,255,.6); text-decoration: underline; text-underline-offset: 3px; }
+    .ft-legal:hover { color: var(--white); }
+    .skip-link {
+      position: absolute; left: 16px; top: -60px; z-index: 10000;
+      background: var(--wine); color: var(--white);
+      padding: 10px 18px; border-radius: 8px; font-weight: 600; text-decoration: none;
+    }
+    .skip-link:focus { top: 12px; }
 
     /* ===================================================================
        WHATSAPP FLOAT
@@ -1111,12 +1141,13 @@
   </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
 
 <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
 <header id="header" class="scrolled">
   <div class="container">
     <a href="#hero" class="logo" aria-label="Brandsen Lab – Inicio">
-      <img src="logo.jpg" alt="Brandsen Lab" class="logo-img" width="52" height="52" decoding="async">
+      <img src="logo.webp" alt="Brandsen Lab" class="logo-img" width="52" height="51" fetchpriority="high">
     </a>
     <nav class="desk" aria-label="Navegación principal">
       <a href="#about">Nosotros</a>
@@ -1140,6 +1171,8 @@
   <a href="#location">Ubicación</a>
   <a href="#contact">Contacto</a>
 </nav>
+
+<main id="main">
 
 <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
 <section id="hero" aria-label="Hero principal">
@@ -1188,35 +1221,35 @@
         <div class="loc-card">
           <div class="loc-ico"><i class="fas fa-map-pin" aria-hidden="true"></i></div>
           <div class="loc-ct">
-            <h4>Dirección</h4>
+            <h3>Dirección</h3>
             <p>Saenz Peña 696<br>Brandsen, Buenos Aires</p>
           </div>
         </div>
         <div class="loc-card">
           <div class="loc-ico"><i class="fas fa-clock" aria-hidden="true"></i></div>
           <div class="loc-ct">
-            <h4>Horarios de Atención</h4>
+            <h3>Horarios de Atención</h3>
             <p>Lunes a Viernes<br><strong>8:00 a 10:00 hs</strong> Extracciones &nbsp;·&nbsp; <strong>10:00 a 12:00 hs</strong> Consultas y resultados</p>
           </div>
         </div>
         <div class="loc-card">
           <div class="loc-ico"><i class="fas fa-phone" aria-hidden="true"></i></div>
           <div class="loc-ct">
-            <h4>Teléfono</h4>
+            <h3>Teléfono</h3>
             <a href="tel:2223442486">(2223) 44-2486</a>
           </div>
         </div>
         <div class="loc-card">
           <div class="loc-ico" style="background:rgba(37,211,102,.15);color:#25D366;"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
           <div class="loc-ct">
-            <h4>WhatsApp</h4>
+            <h3>WhatsApp</h3>
             <a href="https://wa.me/542223672253" target="_blank" rel="noopener noreferrer">(2223) 67-2253</a>
           </div>
         </div>
         <div class="loc-card">
           <div class="loc-ico"><i class="fas fa-envelope" aria-hidden="true"></i></div>
           <div class="loc-ct">
-            <h4>Email</h4>
+            <h3>Email</h3>
             <a href="mailto:brandsenlab@gmail.com">brandsenlab@gmail.com</a>
           </div>
         </div>
@@ -1253,6 +1286,8 @@
       <div class="about-img-box fi">
         <img
           src="labo.webp"
+          srcset="labo-680.webp 680w, labo.webp 1360w"
+          sizes="(max-width: 768px) 100vw, 50vw"
           alt="Laboratorio Brandsen Lab — equipamiento moderno"
           class="about-img"
           width="1360" height="764"
@@ -1380,7 +1415,7 @@
       <div class="instr-card ic-4 fi">
         <div class="instr-hd">
           <div class="instr-ico"><i class="fas fa-wave-square" aria-hidden="true"></i></div>
-          <h3>Estudios Hormonales</h3>
+          <h3>Preparación para estudios hormonales</h3>
         </div>
         <div class="instr-body">
           <ul class="instr-list">
@@ -1398,7 +1433,7 @@
       <div class="instr-card ic-5 fi d1">
         <div class="instr-hd">
           <div class="instr-ico"><i class="fas fa-star-of-life" aria-hidden="true"></i></div>
-          <h3>Estudios Especiales</h3>
+          <h3>Preparación para estudios especiales</h3>
         </div>
         <div class="instr-body">
           <ul class="instr-list">
@@ -1517,30 +1552,26 @@
           <p class="section-sub" style="margin:0;">Comunicate con nosotros y te responderemos a la brevedad.</p>
         </div>
         <a href="https://wa.me/542223672253" target="_blank" rel="noopener noreferrer" class="ch">
-          <div class="ch-ico" style="background:#25D366;"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
-          <div class="ch-t"><strong>WhatsApp</strong><span>(2223) 67-2253 · Respuesta rápida</span></div>
+          <span class="ch-ico" style="background:#25D366;"><i class="fab fa-whatsapp" aria-hidden="true"></i></span>
+          <span class="ch-t"><strong>WhatsApp</strong><span>(2223) 67-2253 · Respuesta rápida</span></span>
         </a>
         <a href="tel:2223442486" class="ch">
-          <div class="ch-ico"><i class="fas fa-phone" aria-hidden="true"></i></div>
-          <div class="ch-t"><strong>Teléfono</strong><span>(2223) 44-2486</span></div>
+          <span class="ch-ico"><i class="fas fa-phone" aria-hidden="true"></i></span>
+          <span class="ch-t"><strong>Teléfono</strong><span>(2223) 44-2486</span></span>
         </a>
         <a href="mailto:brandsenlab@gmail.com" class="ch">
-          <div class="ch-ico"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-          <div class="ch-t"><strong>Email</strong><span>brandsenlab@gmail.com</span></div>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="ch">
-          <div class="ch-ico" style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);"><i class="fab fa-instagram" aria-hidden="true"></i></div>
-          <div class="ch-t"><strong>Instagram</strong><span>Seguinos en redes sociales</span></div>
+          <span class="ch-ico"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+          <span class="ch-t"><strong>Email</strong><span>brandsenlab@gmail.com</span></span>
         </a>
       </div>
 
       <div class="form-box fi d1">
         <h3 class="form-title">Envianos tu consulta</h3>
-        <form id="contactForm" novalidate>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="post" novalidate>
           <input type="hidden" name="access_key" value="22d02cf3-1765-4307-afc2-15b65e65979a">
           <input type="hidden" name="subject" value="Nueva consulta desde BrandsenLab.com">
           <input type="hidden" name="from_name" value="Formulario — Brandsen Lab">
-          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="No completar">
           <div class="f-row">
             <div class="fg">
               <label for="nombre">Nombre *</label>
@@ -1630,18 +1661,18 @@
   </div>
 </section>
 
+</main>
+
 <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
 <footer id="footer">
   <div class="container">
     <div class="ft-grid">
       <div>
         <div class="ft-logo">
-          <img src="logo.jpg" alt="Brandsen Lab" class="ft-logo-img" width="64" height="64" decoding="async">
+          <img src="logo.webp" alt="Brandsen Lab" class="ft-logo-img" width="64" height="63" decoding="async">
         </div>
         <p class="ft-desc">Laboratorio de análisis clínicos comprometido con la precisión, la calidad y el bienestar de cada paciente.</p>
         <div class="ft-social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <a href="https://wa.me/542223672253" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
           <a href="mailto:brandsenlab@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
         </div>
@@ -1678,7 +1709,7 @@
     </div>
     <div class="ft-bottom">
       <span>© <span id="copy-year"></span> Brandsen Lab &nbsp;·&nbsp; Todos los derechos reservados</span>
-      <span>Laboratorio de Análisis Clínicos &nbsp;·&nbsp; Brandsen, Buenos Aires</span>
+      <span>Laboratorio de Análisis Clínicos &nbsp;·&nbsp; Brandsen, Buenos Aires &nbsp;·&nbsp; <a href="/privacidad" class="ft-legal">Política de privacidad</a></span>
     </div>
   </div>
 </footer>
